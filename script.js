@@ -41,29 +41,40 @@ var saveBtn = $(".saveBtn");
     
     function hourTracker() {
     
-        var timeBlock = $(".time-block");
+       // var timeBlock = $(".time-block");
     
-        timeBlock.each(function () {
-            var currentHour = moment().format();
-            var blockHour = moment($(this).text(), "h:mm A"); 
+       // timeBlock.each(function () {
+            var currentHour =  moment().hours();
             
-            if (blockHour === currentHour) {
-               
-                $(this).addClass("present");
-                
-    
-            } else if (blockHour < currentHour) {
-                
+            //moment().format();
+            $(".time-block").each(function(){
+
+            
+            var blockHour = //parseInt($(this).attr("id").split("-")[1]);
+            moment($(this).text(), "h:mm A"); 
+            
+            if (blockHour < currentHour) {
                 $(this).addClass("past");
+                $(this).removeClass("future");
                 
+                $(this).removeClass("present");
+    
+            } else if (blockHour === currentHour) {
+                $(this).addClass("present");
+                $(this).removeClass("past");
+                $(this).removeClass("future");
+                 
+                 console.log("text");
     
             } else  {
-                
                 $(this).addClass("future");
+                $(this).removeClass("past");
                 
+                $(this).removeClass("present");
             }
+
         });
-    }
+}
     
     hourTracker();
     setPlanner();
