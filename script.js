@@ -17,10 +17,10 @@ $(document).ready(function () {
 var saveBtn = $(".saveBtn");
 
     saveBtn.on("click",function () {
-
-        var time = $(this).parent().attr("id");
-        var plan = $(this).siblings(".description").val();
+    console.log(this);
         
+        var plan = $(this).siblings(".description").val();
+        var time = $(this).parent().attr("id");
         
         localStorage.setItem(time, plan);
       
@@ -44,14 +44,15 @@ var saveBtn = $(".saveBtn");
        // var timeBlock = $(".time-block");
     
        // timeBlock.each(function () {
-            var currentHour =  moment().hours();
+            var currentHour =  moment().hour();
             
             //moment().format();
             $(".time-block").each(function(){
 
             
-            var blockHour = //parseInt($(this).attr("id").split("-")[1]);
-            moment($(this).text(), "h:mm A"); 
+            var blockHour = parseInt($(this).attr("id").split("hour")[1]);
+            console.log(blockHour, currentHour)
+           // moment($(this).text(), "h:mm A"); 
             
             if (blockHour < currentHour) {
                 $(this).addClass("past");
@@ -77,7 +78,7 @@ var saveBtn = $(".saveBtn");
 }
     
     hourTracker();
-    setPlanner();
+    //setPlanner();
 
     });
 
