@@ -1,16 +1,4 @@
-var currentDay = $("#currentDay");
-//var currentTime = moment();
-currentDay.text(moment().format("dddd, MMMM Do YYYY"));
-    
-    $("#hr9 .description").val(localStorage.getItem("hr9"));
-    $("#hr10 .description").val(localStorage.getItem("hr10"));
-    $("#hr11 .description").val(localStorage.getItem("hr11"));
-    $("#hr12 .description").val(localStorage.getItem("hr12"));
-    $("#hr13 .description").val(localStorage.getItem("hr13"));
-    $("#hr14 .description").val(localStorage.getItem("hr14"));
-    $("#hr15 .description").val(localStorage.getItem("hr15"));
-    $("#hr16 .description").val(localStorage.getItem("hr16"));
-    $("#hr17 .description").val(localStorage.getItem("hr17"));
+
 
 $(document).ready(function () {
     
@@ -38,7 +26,7 @@ var saveBtn = $(".saveBtn");
         // loop over time blocks
         $('.time-block').each(function () {
           var blockHour = parseInt($(this).attr('id').split('-')[1]);
-           console.log(blockHour, currentHour);
+           //console.log(blockHour, currentHour);
           // check if we've moved past this time
           if (blockHour < currentHour) {
             $(this).addClass('past');
@@ -48,7 +36,7 @@ var saveBtn = $(".saveBtn");
             $(this).removeClass('past');
             $(this).addClass('present');
             $(this).removeClass('future');
-            console.log("text");
+            //console.log("text");
           } else {
             $(this).removeClass('past');
             $(this).removeClass('present');
@@ -57,21 +45,33 @@ var saveBtn = $(".saveBtn");
         });
       } 
 
-   function setPlanner() {
-        $(".hour").each(function(){
-           var nowHour = $(this).text();
-           var nowPlan = localStorage.getItem(nowHour);
-            console.log(this);
-            console.log(nowHour);
+  //  function setPlanner() {
+  //       $(".hour").each(function(){
+  //          var nowHour = $(this).text();
+  //          var nowPlan = localStorage.getItem(nowHour);
+  //           console.log(this);
+  //           console.log(nowHour);
 
-           if(nowPlan !== null) {
-               $(this).siblings(".description").val(nowPlan);
-      }
-       });
-    }
+  //          if(nowPlan !== null) {
+  //              $(this).siblings(".description").val(nowPlan);
+  //     }
+  //      });
+  //   }
     hourTracker();
-    setPlanner();
-
+    //setPlanner();
+    var currentDay = $("#currentDay");
+    //var currentTime = moment();
+    currentDay.text(moment().format("dddd, MMMM Do YYYY"));
+        
+        $("#hr-9 .description").val(localStorage.getItem("hr-9"));
+        $("#hr-10 .description").val(localStorage.getItem("hr-10"));
+        $("#hr-11 .description").val(localStorage.getItem("hr-11"));
+        $("#hr-12 .description").val(localStorage.getItem("hr-12"));
+        $("#hr-13 .description").val(localStorage.getItem("hr-13"));
+        $("#hr-14 .description").val(localStorage.getItem("hr-14"));
+        $("#hr-15 .description").val(localStorage.getItem("hr-15"));
+        $("#hr-16 .description").val(localStorage.getItem("hr-16"));
+        $("#hr-17 .description").val(localStorage.getItem("hr-17"));
     });
-
+    
     
