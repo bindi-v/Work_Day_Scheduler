@@ -19,8 +19,8 @@ var saveBtn = $(".saveBtn");
     saveBtn.on("click",function () {
        // $('.saveBtn').on("click", function(){ 
     console.log(this);
-        var time = $(this).parent().attr("id");
-        var plan = $(this).siblings(".description").val();
+  var time = $(this).parent().attr("id");
+   var plan = $(this).siblings(".description").val();
         
         console.log(time, plan);
         localStorage.setItem(time, plan);
@@ -28,7 +28,7 @@ var saveBtn = $(".saveBtn");
  //$(".description").addClass("show");
  //setTimeout(function() {
 // $('.description').removeClass("show");
-//}, 5000)
+//}, 5000);
     });
 
       function hourTracker() {
