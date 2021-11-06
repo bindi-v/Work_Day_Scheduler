@@ -4,13 +4,13 @@ currentDay.text(moment().format("dddd, MMMM Do YYYY"));
     
     $("#hr9 .description").val(localStorage.getItem("hr9"));
     $("#hr10 .description").val(localStorage.getItem("hr10"));
-    $("#hr11 .description").val(localStorage.getItem("hour11"));
-    $("#hr12 .description").val(localStorage.getItem("hour12"));
-    $("#hr1 .description").val(localStorage.getItem("hour13"));
-    $("#hr2 .description").val(localStorage.getItem("hour14"));
-    $("#hr3 .description").val(localStorage.getItem("hour15"));
-    $("#hr4 .description").val(localStorage.getItem("hour16"));
-    $("#hr5 .description").val(localStorage.getItem("hr5"));
+    $("#hr11 .description").val(localStorage.getItem("hr11"));
+    $("#hr12 .description").val(localStorage.getItem("hr12"));
+    $("#hr13 .description").val(localStorage.getItem("hr13"));
+    $("#hr14 .description").val(localStorage.getItem("hr14"));
+    $("#hr15 .description").val(localStorage.getItem("hr15"));
+    $("#hr16 .description").val(localStorage.getItem("hr16"));
+    $("#hr17 .description").val(localStorage.getItem("hr17"));
 
 $(document).ready(function () {
     
@@ -25,15 +25,15 @@ var saveBtn = $(".saveBtn");
         console.log(time, plan);
         localStorage.setItem(time, plan);
   
- //$(".description").addClass("show");
- //setTimeout(function() {
-// $('.description').removeClass("show");
-//}, 5000);
+     $(".notification").addClass("show");
+      setTimeout(function() {
+      $('.notification').removeClass("show");
+      }, 5000);
     });
 
       function hourTracker() {
         // get current number of hours
-        var currentHour = moment().hour();
+        var currentHour = moment().hours();
     
         // loop over time blocks
         $('.time-block').each(function () {
