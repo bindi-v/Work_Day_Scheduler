@@ -1,5 +1,3 @@
-
-
 $(document).ready(function () {
     
 var saveBtn = $(".saveBtn");
@@ -45,22 +43,10 @@ var saveBtn = $(".saveBtn");
         });
       } 
 
-  //  function setPlanner() {
-  //       $(".hour").each(function(){
-  //          var nowHour = $(this).text();
-  //          var nowPlan = localStorage.getItem(nowHour);
-  //           console.log(this);
-  //           console.log(nowHour);
-
-  //          if(nowPlan !== null) {
-  //              $(this).siblings(".description").val(nowPlan);
-  //     }
-  //      });
-  //   }
-    hourTracker();
-    //setPlanner();
+   hourTracker();
+    
     var currentDay = $("#currentDay");
-    //var currentTime = moment();
+    
     currentDay.text(moment().format("dddd, MMMM Do YYYY"));
         
         $("#hr-9 .description").val(localStorage.getItem("hr-9"));
